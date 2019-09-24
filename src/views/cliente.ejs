@@ -1,0 +1,87 @@
+<!-- <7 paso > -->
+<% include partiales/_header %>
+    <!-- <7 paso > -->
+    <div class="container mt-5" style="max-width: 90%">
+        <div class="row mt-5">
+            <!-- <7 paso > -->
+            <div class="col-md-7">
+                <!-- <8 paso > -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <!-- <8 paso > -->
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+                    <!-- <8 paso > -->
+                    <tbody>
+                        <!-- <8 paso  para octener los datos de la base de datos> -->
+                        <% if (data) { %>
+                            <% for(var i = 0; i < data.length; i++) { %>
+                                <tr>
+                                    <td>
+                                        <%= (i + 1)  %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].Nombre %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].Apellido %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].Direccion %>
+                                    </td>
+                                    <td>
+                                        <%= data[i].Telefono %>
+                                    </td>
+                                    <!-- <9 paso > -->
+                                    <td><a href="/delete/<%= data[i].Id %>" class="btn btn-info btn-sm" style="max-height: 50px;margin-top: -15px ">Eliminar</a>
+                                        <!-- <10 paso > -->
+                                        <a href="/update/<%= data[i].Id %>" class="btn btn-primary btn-sm" style="max-height: 50px; ">Actualizar</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% } %>
+                    </tbody>
+
+                </table>
+
+            </div>
+            <!-- <7 paso > -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- <7 paso > -->
+                        <form action="/Guardar" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="Nombre" required placeholder="nombre" autofocus class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Apellido" required placeholder="apellido" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Direccion" required placeholder="direccion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Telefono" required placeholder="telefono" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Nuevo Comprador</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- <7 paso > -->
+    <% include partiales/_footer %>

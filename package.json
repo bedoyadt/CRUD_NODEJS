@@ -1,0 +1,26 @@
+{
+    "name": "crus_nodejs_mysql",
+    "version": "1.0.0",
+    "description": "crus_nodejs-mysql",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon src/app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "bedoyadt@gmail.com"
+    },
+    "author": "yeison bedoya rodriguez",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^2.7.1",
+        "express": "^4.17.1",
+        "express-myconnection": "^1.0.4",
+        "git": "^0.1.5",
+        "morgan": "^1.9.1",
+        "mysql": "^2.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.2"
+    }
+}
